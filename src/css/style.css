@@ -80,6 +80,7 @@ a{
 .game-prize .prize-name{
   font-size: 12px;
   text-align: center;
+  color: #914D1C;
 }
 .game-prize.prize1{
   order: 1;
@@ -107,13 +108,13 @@ a{
 }
 
 .prize1 .prize-img{
-  background: url("../images/j2/j1.png") no-repeat;
+  background: url("../images/li_2.png") no-repeat;
 }
 .prize2 .prize-img{
-  background: url("../images/j2/j2.png") no-repeat;
+  background: url("../images/li_5.png") no-repeat;
 }
 .prize3 .prize-img{
-  background: url("../images/j2/j3.png") no-repeat;
+  background: url("../images/li_4.png") no-repeat;
 }
 .prize4 .prize-img{
   background: url("../images/j2/j4.png") no-repeat;
@@ -131,7 +132,7 @@ a{
   background: url("../images/j2/j4.png") no-repeat;
 }
 .game-prize.active{
-  box-shadow: inset 0 0 0 3px #ae461e;
+  box-shadow: inset 0 0 0 2px #be4443;
 }
 
 
@@ -287,6 +288,7 @@ a{
 
 .active-validity{
   padding-bottom: 30px;
+  font-size: 10px;
 }
 .active-validity > p{
   font-size: 12px;
