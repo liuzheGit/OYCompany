@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/liuzheGit/OYCompany/issues"
   },
-  "homepage": "https://github.com/liuzheGit/OYCompany#readme"
+  "homepage": "https://github.com/liuzheGit/OYCompany#readme",
+  "dependencies": {
+    "vue": "^2.5.22"
+  }
 }

@@ -4,8 +4,122 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
+<div id="app">
+  <div class="app-bg">
+    <div class="app-banner"></div>
+    <div class="app-title">
+      <img src="./src/images/title1.png">
+    </div>
+    <div class="app-content1">
+      <div class="content1-main">
+        <div class="main-game">
+          <div class="game-prize prize1" v-bind:class="{active: current === 1}">
+            <div class="prize-img"></div>
+            <p class="prize-name">10元现金</p>
+          </div>
+          <div class="game-prize prize2" v-bind:class="{active: current === 2}">
+            <div class="prize-img"></div>
+            <p class="prize-name">50元红包</p>
+          </div>
+          <div class="game-prize prize3" v-bind:class="{active: current === 3}">
+            <div class="prize-img"></div>
+            <p class="prize-name">20元现金</p>
+          </div>
+          <div class="game-prize prize4" v-bind:class="{active: current === 4}">
+            <div class="prize-img"></div>
+            <p class="prize-name">5元现金</p>
+          </div>
+          <div class="game-prize prize5" v-bind:class="{active: current === 5}">
+            <div class="prize-img"></div>
+            <p class="prize-name">再接再厉</p>
+          </div>
+          <div class="game-prize prize6" v-bind:class="{active: current === 6}">
+            <div class="prize-img"></div>
+            <p class="prize-name">50元红包</p>
+          </div>
+          <div class="game-prize prize7" v-bind:class="{active: current === 7}">
+            <div class="prize-img"></div>
+            <p class="prize-name">15元现金</p>
+          </div>
+          <div class="game-prize prize8" v-bind:class="{active: current === 8}">
+            <div class="prize-img"></div>
+            <p class="prize-name">5元现金</p>
+          </div>
+          <div class="game-start" @click="start"></div>
+        </div>
+      </div>
+      <div class="content1-explain">
+        <img src="./src/images/rope.png" class="explain-rope rope1">
+        <img src="./src/images/rope.png" class="explain-rope rope2">
+        <div class="explain-tabs">
+          <div class="tabs-contents">
+            <div v-if="tab === 1" class="tab-content content-words">
+              <div class="remain-wrap">
+                <p>今日剩余抽奖<span class="remain-times">0</span>次</p>
+                <a class="get-chance" href="#"><img src="./src/images/get-chance.png"></a>
+              </div>
+              <div class="explain-words">
+                <img src="./src/images/explain-words.png">
+              </div>
+            </div>
+            <div v-else class="tab-content record-content">
+              <img class="record-title" src="./src/images/record-title.png">
+              <div class="record-main">
+                <p class="record-date">2019年1月28日</p>
+                <ul class="record-items">
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                </ul>
+                <p class="record-date">2019年1月28日</p>
+                <ul class="record-items">
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="tabs-buttons">
+            <a @click="tab = 1" href="javascript:void(0)"><img src="./src/images/explain-btn1.png"></a>
+            <a @click="tab = 0" href="javascript:void(0)"><img src="./src/images/explain-btn2.png"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="app-title">
+      <img src="./src/images/title2.png">
+    </div>
+    <div class="app-content2">
+      <a class="button-link" href="#"><img class="img-button" src="./src/images/button-c21.png"></a>
+      <a class="button-link" href="#"><img class="bag-img" src="./src/images/button-c22.png"></a>
+    </div>
 
+    <div class="app-title">
+      <img src="./src/images/title3.png">
+    </div>
+    <div class="app-content3">
+      <a class="button-link" href="#"><img class="img-button" src="./src/images/button-c3.png"></a>
+    </div>
+    <div class="active-validity">
+      <p>活动时间：2019年1月28日-2019年2月12日</p>
+      <p>活动最终解释权归E融金服所有</p>
+    </div>
+  </div>
+</div>
+<script src="./src/js/vue.min.js"></script>
+<script>
+  var name = 'liuzhe';
+</script>
+<script src="./src/js/main.js"></script>
 </body>
 </html>
