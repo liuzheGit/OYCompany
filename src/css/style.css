@@ -20,32 +20,36 @@ a{
 /* #app */
 
 #app{
-  max-width: 750px;
-  margin: 0 auto;
-  border: 1px solid #C3DC68;
+  /*max-width: 750px;*/
+  /*margin: 0 auto;*/
 }
 
 .app-bg{
   background: url("../images/bgwithbanner.png") no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 .app-bg > .app-banner{
-  height: 150px;
+  /*height: 150px;*/
+  height: 4.16rem;
 }
 .app-title{
-  padding: 10px 0;
+  /*padding: 10px 0;*/
+  padding: .28rem 0;
 }
 
 .app-title > img{
-  width: 195px;
+  /*width: 195px;*/
+  width: 5.41rem;
   margin: 0 auto;
 }
 
 .app-content1 .content1-main{
   background: url("../images/content1.png") no-repeat;
   background-size: 100% 100%;
-  height: 360px;
-  padding: 26px 38px 36px;
+  /*height: 360px;*/
+  height: 10rem;
+  /*padding: 26px 38px 36px;*/
+  padding: .72rem .86rem 1rem;
 }
 /*game*/
 
@@ -60,25 +64,33 @@ a{
 }
 .main-game .game-prize{
   border-radius: 5px;
-  width: 90px;
-  height: 90px;
-  margin: 4px;
-  padding: 14px 18px 16px;
+  /*width: 90px;*/
+  width: 2.52rem;
+  height: 2.52rem;
+  /*height: 90px;*/
+  /*margin: 4px;*/
+  margin: .111rem;
+  /*padding: 14px 18px 16px;*/
+  padding: .39rem .5rem .44rem;
   box-shadow: 0 2px 9px 0 #af8156;
   background-color: #F0CAA0;
   color: #fff;
 }
 .main-game .game-start{
-  width: 90px;
-  height: 90px;
-  margin: 4px;
+  /*width: 90px;*/
+  /*height: 90px;*/
+  width: 2.52rem;
+  height: 2.52rem;
+  margin: .111rem;
+  /*margin: 4px;*/
   background: url("../images/game-start.png") no-repeat;
   background-size: 100%;
   box-shadow: 1px 1px 9px 0 #796363;
   order: 5;
 }
 .game-prize .prize-name{
-  font-size: 12px;
+  /*font-size: 12px;*/
+  font-size: 0.333rem;
   text-align: center;
   color: #914D1C;
 }
@@ -137,43 +149,54 @@ a{
 
 
 .game-prize .prize-img{
-  height: 40px;
-  margin-bottom: 12px;
+  /*height: 40px;*/
+  height: 1.11rem;
+  /*margin-bottom: 12px;*/
+  margin-bottom: .33rem;
   background-size: contain;
 }
 .app-content1 .content1-explain{
   background: url("../images/content1-2.png") no-repeat;
   background-size: 100% 100%;
-  height: 360px;
+  /*height: 360px;*/
+  height: 9rem;
   position: relative;
 }
 
 .content1-explain > .explain-rope{
-  width: 15px;
+  /*width: 15px;*/
+  width: .416rem;
   position: absolute;
-  top: -32px;
+  /*top: -32px;*/
+  top: -0.887rem;
 }
 .explain-rope.rope1{
-  left: 30px;
+  /*left: 30px;*/
+  left: 0.832rem;
 }
 .explain-rope.rope2{
-  right: 30px;
+  /*right: 30px;*/
+  right: 0.832rem;
 }
 /*rules & record*/
 .explain-tabs{
-  padding: 40px 25px 0;
+  /*padding: 40px 25px 0;*/
+  padding: 1.109rem 0.693rem 0;
 }
 
 .remain-wrap{
   background: url("../images/remain-wrap.png");
   background-size: 100%;
   /*width: 310px;*/
-  height: 47px;
+  /*height: 47px;*/
+  height: 1.303rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 .remain-wrap > p{
+  /*font-size: 16px;*/
+  font-size: 0.444rem;
   font-weight: 600;
   color: #D13940;
 }
@@ -185,7 +208,8 @@ a{
   padding: 12px 0 20px;
 }
 .explain-words > img{
-  width: 296px;
+  /*width: 296px;*/
+  width: 8.209rem;
 }
 
 .get-chance{
@@ -193,7 +217,8 @@ a{
 }
 
 .get-chance > img{
-  width: 93px;
+  /*width: 93px;*/
+  width: 2.579rem;
 }
 
 .tabs-contents .content-words{
@@ -204,9 +229,11 @@ a{
 .record-content .record-main{
   background: url("../images/remain-wrap.png") no-repeat;
   background-size: 100% 100%;
-  margin: 15px 0 20px;
+  /*margin: 15px 0 20px;*/
+  margin: 0.416rem 0 0.555rem;
   padding: 12px 50px;
-  height: 180px;
+  /*height: 180px;*/
+  height: 5rem;
   overflow: scroll;
   font-size: 12px;
 }
@@ -223,7 +250,8 @@ a{
 }
 
 .record-content > .record-title{
-  width: 310px;
+  /*width: 310px;*/
+  width: 8.6rem;
   margin: 0 auto;
 }
 
@@ -235,8 +263,10 @@ a{
   justify-content: space-around;
   align-items: center;
   position: absolute;
-  bottom: 32px;
-  left: 45px;
+  width: 8.6rem;
+  /*bottom: 32px;*/
+  bottom: 0.776rem;
+  /*left: 45px;*/
 }
 
 .tabs-buttons > a{
@@ -244,7 +274,8 @@ a{
 }
 
 .tabs-buttons img{
-  width: 118px;
+  /*width: 118px;*/
+  width: 3.272rem;
 }
 
 
@@ -252,7 +283,8 @@ a{
 .app-content2{
   background: url("../images/content2.png") no-repeat;
   background-size: 100% 100%;
-  height: 220px;
+  /*height: 220px;*/
+  height: 6.101rem;
   position: relative;
 }
 
@@ -261,38 +293,50 @@ a{
   position: absolute;
 }
 .app-content2 .button-link:first-child{
-  left: 25px;
-  bottom: 25px;
+  /*left: 25px;*/
+  /*bottom: 25px;*/
+  left: 0.693rem;
+  bottom: 0.693rem;
 }
 .app-content2 .button-link:last-child{
-  right: 25px;
-  bottom: 45px;
+  /*right: 25px;*/
+  /*bottom: 45px;*/
+  right: 0.6rem;
+  bottom: 1.248rem;
 }
 
 .app-content3{
   background: url("../images/content3.png") no-repeat;
   background-size: 100% 100%;
-  height: 220px;
+  /*height: 220px;*/
+  height: 6.101rem;
 }
 .app-content3 > .button-link{
   display: inline-block;
-  margin-top: 150px;
-  margin-left: 25px;
+  /*margin-top: 150px;*/
+  /*margin-left: 25px;*/
+  margin-top: 4.16rem;
+  margin-left: 0.693rem;
 }
 .button-link > .img-button{
-  width: 118px;
+  /*width: 118px;*/
+  width: 3.272rem;
 }
 .button-link > .bag-img{
-  width: 73px;
+  /*width: 73px;*/
+  width: 2.204rem;
 }
 
 .active-validity{
-  padding-bottom: 30px;
-  font-size: 10px;
+  /*padding-bottom: 30px;*/
+  padding-bottom: 0.832rem;
+  /*font-size: 10px;*/
+  font-size: 0.277rem;
 }
 .active-validity > p{
   font-size: 12px;
   color: #98582A;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.5;
+  font-weight: 500;
 }
