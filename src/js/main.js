@@ -18,16 +18,22 @@ const vm = new Vue({
     begin: 1,
     isRunning: false,
     sendData: null,
-    prizeNumber: null
+    prizeNumber: null,
+    isLogin: false
   },
   created() {
     this.msg = window.name;
   },
   methods: {
     start:function () {
+      if (this.isRunning) return;
       var res = this.test();
       console.log(this.sendData);
-      this.game(res);
+      if(this.isLogin === false){
+        $('.popup.login-popup').show().parents('.popup-wrap').show();
+      }else{
+        this.game(res);
+      }
       // $.ajax({
       //   methods: 'GET',
       //   url: '',
@@ -38,7 +44,6 @@ const vm = new Vue({
       // });
     },
     game: function (res) {
-      if (this.isRunning) return;
         this.isRunning = true;
         this.current = 0;
         this.begin = 1;
