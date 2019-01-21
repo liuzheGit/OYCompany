@@ -2,6 +2,7 @@ const vm = new Vue({
   el: '#app',
   data: {
     msg: 'hello',
+    times: 1,
     tab: 1,
     current: 0,
     begin: 1,
@@ -12,7 +13,7 @@ const vm = new Vue({
   },
   methods: {
     start: function () {
-      if (this.isRunning) return
+      if (this.isRunning) return;
         this.isRunning = true;
         this.current = 0;
         this.begin = 1;

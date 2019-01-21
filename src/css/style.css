@@ -340,3 +340,87 @@ a{
   line-height: 1.5;
   font-weight: 500;
 }
+
+/*model*/
+
+.popup-wrap{
+  background: rgba(0, 0, 0, .4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: none;
+}
+.popup.login-popup{
+  /*display: block;*/
+}
+.popup-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35%;
+}
+.xianjin-popup{
+  background: url("../images/model/LModle.png") no-repeat;
+}
+.hongbao-popup{
+  background: url("../images/model/50bag.png") no-repeat;
+}
+.small-model{
+  background: url("../images/model/sModle.png") no-repeat;
+}
+.popup.big-model{
+  width: 7.765rem;
+  height: 8.268rem;
+}
+.popup.small-model{
+  width: 7.765rem;
+  height: 5rem;
+  margin-top: 2rem;
+}
+.popup{
+  background-size: 100% 100%;
+  position: relative;
+  display: none;
+}
+
+
+.popup > .close-btn{
+  width: 0.66rem;
+  position: absolute;
+  right: -0.28rem;
+  top: -0.12rem;
+}
+.popup-number{
+  margin-top: 2.134rem;
+  text-align: center;
+  color: #865138;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+.popup-text{
+  margin-top: 1rem;
+  text-align: center;
+  color: #865138;
+  font-size: .45rem;
+}
+.popup-buttons{
+  position: absolute;
+  bottom: 0.8rem;
+  width: 100%;
+  padding: 0 0.4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.popup-buttons > a{
+  display: block;
+}
+.only-btn > img{
+  width: 5rem;
+}
+.two-btn > img{
+  width: 2.5rem;
+}

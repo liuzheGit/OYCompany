@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>弹窗</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    *{margin: 0; padding: 0;}
+    .popup-wrap{
+      position: fixed;
+      width: 100%;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+    }
+    .popup{
+      width: 179px;
+      height: 208px;
+      margin: 100px auto;
+      background: url("./src/images/model/20bag.png") no-repeat;
+      background-size: 100%;
+      position: relative;
+    }
+    .popup > .popup-buttons{
+      position: absolute;
+      bottom: 12px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .popup-buttons img{
+      width: 70px;
+    }
+    .close-btn{
+      position: absolute;
+      width: 14px;
+      right: -6px;
+      top: -4px;
+    }
+    .close-btn > img{
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div class="popup-wrap">
+  <div class="popup">
+    <div class="close-btn">
+      <img src="./src/images/model/close.png">
+    </div>
+    <div class="popup-buttons">
+      <a href="#"><img src="./src/images/model/toBag.png" alt="活动红包页"></a>
+      <a href="#"><img src="./src/images/model/toUse.png" alt="查看红包"></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
