@@ -42,6 +42,13 @@
           <a class="only-btn" href="#"><img src="./src/images/model/toLogin.png" alt="去登录"></a>
         </div>
       </div>
+      <div class="popup noTimes-popup small-model">
+        <img src="./src/images/model/close.png" class="close-btn" alt="关闭">
+        <p class="popup-text">没有次数!</p>
+        <div class="popup-buttons">
+          <a class="only-btn" href="javascript:void(0)"><img src="./src/images/model/ok.png" alt="确定"></a>
+        </div>
+      </div>
     </div>
   </div>
   <div class="app-bg">
@@ -103,31 +110,16 @@
             </div>
             <div v-else class="tab-content record-content">
               <img class="record-title" src="./src/images/record-title.png">
-              <div class="record-main">
-                <p class="record-date">2019年1月28日</p>
-                <ul class="record-items">
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                </ul>
-                <p class="record-date">2019年1月28日</p>
-                <ul class="record-items">
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                </ul>
+              <div v-if="records" class="record-main" v-html="records">
+              </div>
+              <div v-else class="record-main">
+                <p>暂无数据</p>
               </div>
             </div>
           </div>
           <div class="tabs-buttons">
             <a @click="tab = 1" href="javascript:void(0)"><img src="./src/images/explain-btn1.png"></a>
-            <a @click="tab = 0" href="javascript:void(0)"><img src="./src/images/explain-btn2.png"></a>
+            <a @click="getRecords" href="javascript:void(0)"><img src="./src/images/explain-btn2.png"></a>
           </div>
         </div>
       </div>

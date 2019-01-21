@@ -19,7 +19,8 @@ const vm = new Vue({
     isRunning: false,
     sendData: null,
     prizeNumber: null,
-    isLogin: false
+    isLogin: true,
+    records: null,
   },
   created() {
     this.msg = window.name;
@@ -31,6 +32,8 @@ const vm = new Vue({
       console.log(this.sendData);
       if(this.isLogin === false){
         $('.popup.login-popup').show().parents('.popup-wrap').show();
+      }else if(this.times <= 0){
+        $('.popup.noTimes-popup').show().parents('.popup-wrap').show();
       }else{
         this.game(res);
       }
@@ -67,10 +70,46 @@ const vm = new Vue({
             }else{
               $('.popup.xianjin-popup').show().parents('.popup-wrap').show();
             }
+            this.times--;
           } else {
             this.begin++;
           }
         }, 50);
+    },
+    getRecords: function(){
+      this.tab = 0;
+      // $.ajax({
+      //   url: '',
+      //   method: 'GET',
+      //   dataType: 'json',
+      //   success: function(){
+
+      //   }
+      // })
+      let str = `
+                <p class="record-date">2019年1月28日</p>
+                <ul class="record-items">
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                </ul>
+                <p class="record-date">2019年1月28日</p>
+                <ul class="record-items">
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                </ul>
+      `;
+
+      setTimeout(function(){
+        vm.records = str;
+      }, 1000)
     },
     test: function () {
       var result = this.getPrize();
