@@ -15,7 +15,6 @@ $(function(){
 * isRunning: 抽奖进行时
 * sendData: 发送的txt
 * prizeNumber: 抽奖的是现金的 值
-* isLogin: 是否登录
 * records: 记录的html字符串
 * */
 var vm = new Vue({
@@ -28,7 +27,6 @@ var vm = new Vue({
     isRunning: false,
     sendData: null,
     prizeNumber: null,
-    isLogin: true,
     records: null
   },
   created:function(){
@@ -38,9 +36,7 @@ var vm = new Vue({
     start:function () {
       if (this.isRunning) return;
       var res = this.makeData();
-      if(this.isLogin === false){
-        $('.popup.login-popup').show().parents('.popup-wrap').show();
-      }else if(this.times <= 0){
+      if(this.times <= 0){
         $('.popup.noTimes-popup').show().parents('.popup-wrap').show();
       }else{
         // $.ajax({
@@ -70,7 +66,6 @@ var vm = new Vue({
         this.current = 0;
         this.begin = 1;
         var index = 48;
-        // let res = this.test();
         index = Number(index) + Number(res);
         var interval1 = setInterval(function(){
           var currentIndex = vm.begin % 8;
@@ -96,19 +91,14 @@ var vm = new Vue({
         }, 50);
     },
     getRecords: function(){
-      if(this.isLogin == false){
-        // 服务器返回 没登录 走这一步
-        $('.popup.login-popup').show().parents('.popup-wrap').show();
-      }else{
-        this.tab = 0;
         // $.ajax({
         //   url: '',
         //   method: 'GET',
         //   dataType: 'json',
         //   success: function(data){
               var data = {
-                res: `
-                <ul>
+                state: 1,
+                html: `
                   <li>
                     5元红包
                     <i>2019-01-17</i>
@@ -145,14 +135,17 @@ var vm = new Vue({
                     5元红包
                     <i>2019-01-17</i>
                   </li>
-                </ul>
                 `
               };
-
-              vm.records = data.res;
+              if(data.state == 0){
+                // 服务器返回 没登录 走这一步
+                $('.popup.login-popup').show().parents('.popup-wrap').show();
+              }else{
+                this.tab = 0;
+                vm.records = data.html;
+              }
         //   }
         // })
-      }
     },
     makeData: function () {
       var result = this.getPrize();

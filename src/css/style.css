@@ -238,10 +238,15 @@ a{
   overflow: scroll;
   font-size: 12px;
 }
+.record-main p{
+  text-align: center;
+  color: #fff;
+}
 .record-main li{
   margin: 0.3rem 0;
   color: #fff;
 }
+
 .record-main i{
   float: right;
   font-style: normal;

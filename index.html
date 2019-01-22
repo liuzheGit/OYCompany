@@ -110,10 +110,8 @@
             </div>
             <div v-else class="tab-content record-content">
               <img class="record-title" src="./src/images/record-title.png">
-              <div v-if="records" class="record-main" v-html="records">
-              </div>
-              <div v-else class="record-main">
-                <p style="text-align: center; color: #fff;">暂无抽奖记录!</p>
+              <div v-if="records" class="record-main">
+                <ul v-html="records"></ul>
               </div>
             </div>
           </div>
