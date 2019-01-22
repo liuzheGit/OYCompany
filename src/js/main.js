@@ -59,7 +59,6 @@ var vm = new Vue({
             $('.popup.noTimes-popup').show().parents('.popup-wrap').show();
           }else{
             this.game(res);
-            console.log(this.sendData);
           }
         //
         //   }
@@ -98,6 +97,7 @@ var vm = new Vue({
     },
     getRecords: function(){
       if(this.isLogin == false){
+        // 服务器返回 没登录 走这一步
         $('.popup.login-popup').show().parents('.popup-wrap').show();
       }else{
         this.tab = 0;
@@ -108,20 +108,44 @@ var vm = new Vue({
         //   success: function(data){
               var data = {
                 res: `
-                  <p class="record-date">2019年1月28日</p>
-                  <ul class="record-items">
-                    <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                    <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                    <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                    <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                  </ul>
-                  <p class="record-date">2019年1月28日</p>
-                  <ul class="record-items">
-                    <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                    <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                    <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                    <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                  </ul>
+                <ul>
+                  <li>
+                    5元红包
+                    <i>2019-01-17</i>
+                  </li>
+                  <li>
+                    5元红包
+                    <i>2019-01-17</i>
+                  </li>
+                  <li>
+                    5元红包
+                    <i>2019-01-17</i>
+                  </li>
+                  <li>
+                    5元红包
+                    <i>2019-01-17</i>
+                  </li>
+                  <li>
+                    5元红包
+                    <i>2019-01-17</i>
+                  </li>
+                  <li>
+                    5元红包
+                    <i>2019-01-17</i>
+                  </li>
+                  <li>
+                    5元红包
+                    <i>2019-01-17</i>
+                  </li>
+                  <li>
+                    5元红包
+                    <i>2019-01-17</i>
+                  </li>
+                  <li>
+                    5元红包
+                    <i>2019-01-17</i>
+                  </li>
+                </ul>
                 `
               };
 
@@ -133,25 +157,19 @@ var vm = new Vue({
     makeData: function () {
       var result = this.getPrize();
       if (result == 1) {
-        console.log('10元现金');
         this.sendData = 2;
         this.prizeNumber = 10;
       } else if (result == 2 || result == 6) {
-        console.log('50元红包');
         this.sendData = 5;
       } else if (result == 3) {
-        console.log('20元现金');
         this.sendData = 4;
         this.prizeNumber = 20;
       } else if (result == 4 || result == 8) {
-        console.log('5元现金');
         this.sendData = 1;
         this.prizeNumber = 5;
       } else if (result == 5) {
-        console.log('谢谢参与');
         this.sendData = 0;
       } else if (result == 7) {
-        console.log('15元现金');
         this.sendData = 3;
         this.prizeNumber = 15;
       }

@@ -181,7 +181,8 @@ a{
 /*rules & record*/
 .explain-tabs{
   /*padding: 40px 25px 0;*/
-  padding: 1.109rem 0.693rem 0;
+  /*padding: 1.109rem 0.693rem 0;*/
+  padding: 0.809rem 0.693rem 0;
 }
 
 .remain-wrap{
@@ -230,23 +231,20 @@ a{
   background: url("../images/remain-wrap.png") no-repeat;
   background-size: 100% 100%;
   /*margin: 15px 0 20px;*/
-  margin: 0.16rem 0 0.555rem;
+  margin: 0.26rem 0 0.555rem;
   padding: 12px 50px;
   /*height: 180px;*/
   height: 5rem;
   overflow: scroll;
   font-size: 12px;
 }
-.record-main .record-date{
-  color: #D13A40;
-}
-.record-main .record-items{
+.record-main li{
+  margin: 0.3rem 0;
   color: #fff;
 }
-.record-items > .record-item{
-  display: flex;
-  justify-content: space-between;
-  padding: 2px;
+.record-main i{
+  float: right;
+  font-style: normal;
 }
 
 .record-content > .record-title{
