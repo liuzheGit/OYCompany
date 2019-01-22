@@ -390,15 +390,15 @@ a{
 .popup > .close-btn{
   width: 0.66rem;
   position: absolute;
-  right: -0.28rem;
-  top: -0.12rem;
+  right: -0.128rem;
+  top: -0.312rem;
 }
 .popup-number{
-  margin-top: 2.134rem;
+  margin-top: 2.26rem;
   text-align: center;
   color: #865138;
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.58rem;
 }
 .popup-text{
   margin-top: 1rem;
