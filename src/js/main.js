@@ -7,12 +7,21 @@ $(function(){
     $(this).parents('.popup').hide().parents('.popup-wrap').hide();
   })
 });
-
-const vm = new Vue({
+/*
+* times: 剩余的抽奖次数
+* tab: 抽奖记录和说明的切换
+* current: 抽奖的 当前高亮
+* begin: 开始的位置
+* isRunning: 抽奖进行时
+* sendData: 发送的txt
+* prizeNumber: 抽奖的是现金的 值
+* isLogin: 是否登录
+* records: 记录的html字符串
+* */
+var vm = new Vue({
   el: '#app',
   data: {
-    msg: 'hello',
-    times: 1,
+    times: 0,
     tab: 1,
     current: 0,
     begin: 1,
@@ -20,98 +29,108 @@ const vm = new Vue({
     sendData: null,
     prizeNumber: null,
     isLogin: true,
-    records: null,
+    records: null
   },
-  created() {
-    this.msg = window.name;
+  created:function(){
+    this.times = window.endTimes;
   },
   methods: {
     start:function () {
       if (this.isRunning) return;
-      var res = this.test();
-      console.log(this.sendData);
+      var res = this.makeData();
       if(this.isLogin === false){
         $('.popup.login-popup').show().parents('.popup-wrap').show();
       }else if(this.times <= 0){
         $('.popup.noTimes-popup').show().parents('.popup-wrap').show();
       }else{
-        this.game(res);
+        // $.ajax({
+        //   methods: 'GET',
+        //   url: '',
+        //   dataType: 'json',
+        //   data: {txt:this.sendData},
+        //   success: function(data){
+        //  模拟数据
+        var data = {
+          'state': 1
+        };
+          if(data.state == 0){
+            $('.popup.login-popup').show().parents('.popup-wrap').show();
+          }else if(data.state == 2){
+            $('.popup.noTimes-popup').show().parents('.popup-wrap').show();
+          }else{
+            this.game(res);
+            console.log(this.sendData);
+          }
+        //
+        //   }
+        // });
       }
-      // $.ajax({
-      //   methods: 'GET',
-      //   url: '',
-      //   dataType: 'json',
-      //   success: function(data){
-      //
-      //   }
-      // });
     },
     game: function (res) {
         this.isRunning = true;
         this.current = 0;
         this.begin = 1;
-        let index = 64;
+        var index = 48;
         // let res = this.test();
         index = Number(index) + Number(res);
-        var interval1 = setInterval(() => {
-          var currentIndex = this.begin % 8;
+        var interval1 = setInterval(function(){
+          var currentIndex = vm.begin % 8;
           if (currentIndex === 0) {
-            this.current = 8;
+            vm.current = 8;
           } else {
-            this.current = currentIndex
+            vm.current = currentIndex;
           }
-          if (this.begin >= index) {
-            this.isRunning = false;
+          if (vm.begin >= index) {
+            vm.isRunning = false;
             clearInterval(interval1);
-            if(this.sendData == 0){
+            if(vm.sendData == 0){
               $('.popup.fail-popup').show().parents('.popup-wrap').show();
-            }else if(this.sendData == 5){
+            }else if(vm.sendData == 5){
               $('.popup.hongbao-popup').show().parents('.popup-wrap').show();
             }else{
               $('.popup.xianjin-popup').show().parents('.popup-wrap').show();
             }
-            this.times--;
+            vm.times--;
           } else {
-            this.begin++;
+            vm.begin++;
           }
         }, 50);
     },
     getRecords: function(){
-      this.tab = 0;
-      // $.ajax({
-      //   url: '',
-      //   method: 'GET',
-      //   dataType: 'json',
-      //   success: function(){
+      if(this.isLogin == false){
+        $('.popup.login-popup').show().parents('.popup-wrap').show();
+      }else{
+        this.tab = 0;
+        // $.ajax({
+        //   url: '',
+        //   method: 'GET',
+        //   dataType: 'json',
+        //   success: function(data){
+              var data = {
+                res: `
+                  <p class="record-date">2019年1月28日</p>
+                  <ul class="record-items">
+                    <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                    <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                    <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                    <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                  </ul>
+                  <p class="record-date">2019年1月28日</p>
+                  <ul class="record-items">
+                    <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                    <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                    <li class="record-item"><span>第1次</span><span>20元现金</span></li>
+                    <li class="record-item"><span>第1次</span><span>2元现金</span></li>
+                  </ul>
+                `
+              };
 
-      //   }
-      // })
-      let str = `
-                <p class="record-date">2019年1月28日</p>
-                <ul class="record-items">
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                </ul>
-                <p class="record-date">2019年1月28日</p>
-                <ul class="record-items">
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>20元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                  <li class="record-item"><span>第1次</span><span>2元现金</span></li>
-                </ul>
-      `;
-
-      setTimeout(function(){
-        vm.records = str;
-      }, 1000)
+              vm.records = data.res;
+        //   }
+        // })
+      }
     },
-    test: function () {
+    makeData: function () {
       var result = this.getPrize();
       if (result == 1) {
         console.log('10元现金');
@@ -129,7 +148,7 @@ const vm = new Vue({
         this.sendData = 1;
         this.prizeNumber = 5;
       } else if (result == 5) {
-        console.log('歇歇参与');
+        console.log('谢谢参与');
         this.sendData = 0;
       } else if (result == 7) {
         console.log('15元现金');

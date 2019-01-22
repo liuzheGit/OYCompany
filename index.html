@@ -44,7 +44,7 @@
       </div>
       <div class="popup noTimes-popup small-model">
         <img src="./src/images/model/close.png" class="close-btn" alt="关闭">
-        <p class="popup-text">没有次数!</p>
+        <p class="popup-text">次数用完了!</p>
         <div class="popup-buttons">
           <a class="only-btn" href="javascript:void(0)"><img src="./src/images/model/ok.png" alt="确定"></a>
         </div>
@@ -113,7 +113,7 @@
               <div v-if="records" class="record-main" v-html="records">
               </div>
               <div v-else class="record-main">
-                <p>暂无数据</p>
+                <p style="text-align: center; color: #fff;">暂无抽奖记录!</p>
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@
 <script src="./src/js/jquery.min.js"></script>
 <script src="./src/js/vue.min.js"></script>
 <script>
-  var name = 'liuzhe';
+  var endTimes = 5;
 </script>
 <script src="./src/js/main.js"></script>
 </body>
