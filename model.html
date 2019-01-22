@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>弹窗</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./src/css/animate.min.css">
   <style>
     *{margin: 0; padding: 0;}
     .popup-wrap{
@@ -44,7 +45,7 @@
 </head>
 <body>
 <div class="popup-wrap">
-  <div class="popup">
+  <div class="popup animated bounceInDown">
     <div class="close-btn">
       <img src="./src/images/model/close.png">
     </div>
@@ -56,3 +57,14 @@
 </div>
 </body>
 </html>
+<script src="./src/js/jquery.min.js"></script>
+<script>
+  $(function(){
+    $('.close-btn').click(function(){
+      $(this).parents('.popup-wrap').hide();
+    });
+    $('.popup-buttons > a').click(function(){
+      $(this).parents('.popup-wrap').hide();
+    })
+  })
+</script>

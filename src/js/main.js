@@ -54,7 +54,7 @@ var vm = new Vue({
           }else if(data.state == 2){
             $('.popup.noTimes-popup').show().parents('.popup-wrap').show();
           }else{
-            this.game(res);
+            vm.game(res);
           }
         //
         //   }
@@ -141,7 +141,7 @@ var vm = new Vue({
                 // 服务器返回 没登录 走这一步
                 $('.popup.login-popup').show().parents('.popup-wrap').show();
               }else{
-                this.tab = 0;
+                vm.tab = 0;
                 vm.records = data.html;
               }
         //   }
