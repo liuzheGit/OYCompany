@@ -169,8 +169,10 @@ var vm = new Vue({
       return result;
     },
     getPrize: function () {
+      // 奖品设置：5元现金: 20; 10元现金: 5; 15元现金: 1; 20元现金: 0.1; 50元红包: 60; 再接再厉: 13.9;
       var lucks = [5, 30, 0.1, 5, 13.9, 30, 1, 5];
       var items = [1, 2, 3, 4, 5, 6, 7, 8];
+      // ['10元现金', '50元红包', ''20元现金', '5元现金', '再接再厉', '50元红包', '15元现金', '5元现金'];
       return this.goodLuck(items, lucks);
     },
     goodLuck: function (obj, luck) {
