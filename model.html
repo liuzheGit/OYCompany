@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>弹窗</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script>
+    document.write('<style>html{font-size:'+window.innerWidth / 10+'px;}</style>');
+  </script>
   <link rel="stylesheet" href="./src/css/animate.min.css">
   <style>
     *{margin: 0; padding: 0;}
@@ -12,10 +15,10 @@
       width: 100%;
       top: 0; bottom: 0;
       left: 0; right: 0;
+      background: rgba(0,0 ,0 , 0.4);
     }
     .popup{
-      width: 179px;
-      height: 208px;
+      width: 7.765rem;
       margin: 100px auto;
       background: url("./src/images/model/20bag.png") no-repeat;
       background-size: 100%;
@@ -23,20 +26,20 @@
     }
     .popup > .popup-buttons{
       position: absolute;
-      bottom: 12px;
+      bottom: 0.61rem;
       width: 100%;
       display: flex;
       justify-content: space-around;
       align-items: center;
     }
     .popup-buttons img{
-      width: 70px;
+      width: 2.88rem;
     }
     .close-btn{
       position: absolute;
-      width: 14px;
-      right: -6px;
-      top: -4px;
+      width: 0.6rem;
+      right: -0.25rem;
+      top: -0.5rem;
     }
     .close-btn > img{
       width: 100%;
