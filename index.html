@@ -101,7 +101,7 @@
           <div class="tabs-contents">
             <div v-if="tab === 1" class="tab-content content-words">
               <div class="remain-wrap">
-                <p>今日剩余抽奖<span class="remain-times">{{ times }}</span>次</p>
+                <p>今日剩余抽奖<span class="remain-times">{{ times < 0 ? 0 : times }}</span>次</p>
                 <a class="get-chance" href="#"><img src="./src/images/get-chance.png"></a>
               </div>
               <div class="explain-words">
