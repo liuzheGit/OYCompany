@@ -45,6 +45,24 @@
     .close-btn > img{
       width: 100%;
     }
+    .person{
+      position: fixed;
+      bottom: 0.24rem;
+      right: 0.3rem;
+      width: 3rem;
+    }
+    .person .ahref{
+      display: block;
+    }
+    .person .person-gif{
+      width: 100%;
+    }
+    .person-close-btn{
+      position: absolute;
+      width: 0.6rem;
+      right: -0.15rem;
+      top: -0.25rem;
+    }
   </style>
 </head>
 <body>
@@ -59,6 +77,12 @@
     </div>
   </div>
 </div>
+<div class="person">
+  <a href="#" class="ahref">
+    <img class="person-gif" src="./src/images/person.gif" alt="活动gif">
+  </a>
+  <img class="person-close-btn" src="./src/images/model/close.png">
+</div>
 </body>
 </html>
 <script src="./src/js/jquery.min.js"></script>
@@ -69,6 +93,10 @@
     });
     $('.popup-buttons > a').click(function(){
       $(this).parents('.popup-wrap').hide();
+    })
+
+    $('.person-close-btn').click(function(){
+      $(this).parent().hide()
     })
   })
 </script>
